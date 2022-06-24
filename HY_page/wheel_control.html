@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+      html {
+        /* overflow: hidden; */
+      }
+
+      html,
+      body {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      .section {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      #section1 {
+        background-color: aliceblue;
+      }
+
+      #section2 {
+        background-color: lightpink;
+      }
+
+      #section3 {
+        background-color: coral;
+      }
+
+      #section4 {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section" id="section1">
+      <div id="section1_detail"></div>
+    </div>
+    <div class="section" id="section2"></div>
+    <div class="section" id="section3"></div>
+    <div class="section" id="section4"></div>
+  </body>
+  <script>
+    window.addEventListener(
+      "wheel",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+    var mHtml = $("html");
+    var page = 1;
+
+    mHtml.animate({ scrollTop: 0 }, 10);
+    $(window).on("wheel", function (e) {
+      if (mHtml.is(":animated")) return;
+      if (e.originalEvent.deltaY > 0) {
+        if (page == 4) return;
+        page++;
+      } else if (e.originalEvent.deltaY < 0) {
+        if (page == 1) return;
+        page--;
+      }
+      var posTop = (page - 1) * $(window).height();
+      mHtml.animate({ scrollTop: posTop });
+    });
+  </script>
+</html>
