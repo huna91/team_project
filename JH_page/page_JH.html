@@ -6,61 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="CSS/reset.css">
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 <link rel="stylesheet" href="CSS/JH.css">
 <body>
-    <h2>Marketplace</h2> <!-- 검색 인풋 넣을까? -->
+    <div id="main">
 
-    <!-- 최근 선별된 컬렉션 -->
-    <div>
-        <h4>Recent Curated Collections</h4>
-        <h6>Hand selected and exclusively dropped on Cookie Cloud</h6>
-        <button onClick="cu_goPrecious()">previous</button>
-        <button onClick="cu_goNext()">next</button>
-    </div>
-    <div class="curated_slide-container">
-        <div class="curated_slider">
-            <div class="item">
-                <img src="img/chan_green.jpeg" alt="chan_green" width="800px" height="200px">
-                <p>200days anniversary picture</p>
-            </div>
-            <div class="item">
-                <img src="img/chan_red.jpeg" alt="chan_red" width="800px" height="200px">
-                <p>200days anniversary picture</p>
-            </div>
-            <div class="item">
-                <img src="img/chan_yellow.jpeg" alt="chan_yellow" width="800px" height="200px">
-                <p>200days anniversary picture</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 최근 확인된 컬렉션 -->
-    <div>
-        <h4>Recent Verified Collections</h4>
-        <h6>External listings that have been verified as legitimate and authentic by Cookie Cloud</h6>
-        <button onClick="ve_goPrecious()">previous</button>
-        <button onClick="ve_goNext()">next</button>
-    </div>
-    <div class="verified_slide-container">
-        <div class="verified_slider">
-            <div class="item">
-                <img src="img/chan_green.jpeg" alt="chan_green" width="800px" height="200px">
-                <p>200days anniversary picture</p>
-            </div>
-            <div class="item">
-                <img src="img/chan_red.jpeg" alt="chan_red" width="800px" height="200px">
-                <p>200days anniversary picture</p>
-            </div>
-            <div class="item">
-                <img src="img/chan_yellow.jpeg" alt="chan_yellow" width="800px" height="200px">
-                <p>200days anniversary picture</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 컬렉션들... 검색기능 안넣고 싶다 -->
+        <h1>Marketplace</h1> <!-- 검색 인풋 넣을까? -->
     
+        <!-- 최근 선별된 컬렉션 -->
+        <div class="curated">
+            <div class="h4">Recent Curated Collections</div>
+            <span class="h6">Hand selected and exclusively dropped on Cookie Cloud</span>
+            <span type="button" onClick="cu_goPrecious()">
+                <img src="img/left.png" alt="left">
+            </span>
+            <span type="button" onClick="cu_goNext()">
+                <img src="img/right.png" alt="right">
+            </span>
+        </div>
+        <div class="curated_slide-container">
+            <div class="curated_slider">
+                <div class="slider_item">
+                    <img src="img/chan_green.jpeg" alt="chan_green" height="400px">
+                    <p>200days anniversary picture</p>
+                </div>
+                <div class="slider_item">
+                    <img src="img/chan_red.jpeg" alt="chan_red" width="800px" height="200px">
+                    <p>200days anniversary picture</p>
+                </div>
+                <div class="slider_item">
+                    <img src="img/chan_yellow.jpeg" alt="chan_yellow" width="800px" height="200px">
+                    <p>200days anniversary picture</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 최근 확인된 컬렉션 -->
+        <div class="verified">
+            <div class="h4">Recent Verified Collections</div>
+            <span class="h6">External listings that have been verified as legitimate and authentic by Cookie Cloud</span>
+            <span type="button" onClick="ve_goPrecious()">
+                <img src="img/left.png" alt="left">
+            </span>
+            <span type="button" onClick="ve_goNext()">
+                <img src="img/right.png" alt="right">
+            </span>
+        </div>
+        <div class="verified_slide-container">
+            <div class="verified_slider">
+                <div class="slider_item">
+                    <img src="img/chan_green.jpeg" alt="chan_green" width="800px" height="200px">
+                    <p>200days anniversary picture</p>
+                </div>
+                <div class="slider_item">
+                    <img src="img/chan_red.jpeg" alt="chan_red" width="800px" height="200px">
+                    <p>200days anniversary picture</p>
+                </div>
+                <div class="slider_item">
+                    <img src="img/chan_yellow.jpeg" alt="chan_yellow" width="800px" height="200px">
+                    <p>200days anniversary picture</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 컬렉션들... 검색기능 안넣고 싶다 -->
+        <div id="stop_bg_container">
+            <div class="stop_bg">
+                <img src="img/chan_sleeping.jpg" alt="sleep" width="100%">
+            </div>
+            <div class="collection">
+                <img src="img/chan_green.jpeg" alt="green" width="600px">
+                <div>
+                    <span class="name">name</span>
+                    <span class="price">price</span>
+                </div>
+            </div>
+            <div class="collection">
+                <img src="img/chan_red.jpeg" alt="red" width="600px">
+                <div>
+                    <span class="name">name</span>
+                    <span class="price">price</span>
+                </div>
+            </div>
+            <div class="collection">
+                <img src="img/chan_yellow.jpeg" alt="yellow" width="600px">
+                <div>
+                    <span class="name">name</span>
+                    <span class="price">price</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->
 <script src="JS/JH.js"></script>

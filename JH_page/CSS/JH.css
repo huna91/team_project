@@ -1,5 +1,53 @@
 
+#main {
+    width: 100vh;
+    margin: auto;
+}
+
+/* h 들 */
+h1 {
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 20px 0px 20px;
+}
+.h4 {
+    font-size: 25px;
+    margin: 0px 0px 10px;
+}
+.h6 {
+    color: darkgray;
+}
+
+/* < > 버튼 */
+.curated,.verified {
+    position: relative;
+}
+.curated span img,.verified span img{
+    border: 1px solid darkgray;
+    padding: 5px;
+    border-radius: 25px;
+    /* margin-top: -10px; */
+    transition: 0.5s;
+}
+.curated span:last-child img,
+.verified span:last-child img {
+    position: absolute;
+    right: 1px;
+}
+.curated span:nth-child(3) img,
+.verified span:nth-child(3) img {
+    position: absolute;
+    right: 45px;
+}
+.curated span img:hover,.verified span img:hover {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+
 /* sliders */
+.curated_slider-container {
+    padding: 100px 0px 0px;
+}
 .curated_slider,.verified_slider {
     display: flex;
     overflow-x: scroll;
@@ -13,4 +61,8 @@
 .curated_slider::-webkit-scrollbar,
 .verified_slider::-webkit-scrollbar {
     display: none;
+}
+
+.slider_item {
+    display: flex;
 }
