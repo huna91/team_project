@@ -3,7 +3,7 @@
 
 function cu_goPrecious() {
   document.querySelector('.curated_slider').scrollBy({ 
-    left: -300,
+    left: -300,                 // 숫자 전부 수정해야됨
     behavior: 'smooth' 
   });
 }

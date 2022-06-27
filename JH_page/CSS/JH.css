@@ -45,9 +45,6 @@ h1 {
 }
 
 /* sliders */
-.curated_slider-container {
-    padding: 100px 0px 0px;
-}
 .curated_slider,.verified_slider {
     display: flex;
     overflow-x: scroll;
