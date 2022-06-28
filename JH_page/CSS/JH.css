@@ -47,11 +47,17 @@ h1 {
 
 
 /* sliders */
+.curated_slider-container {
+    height: 131px;
+}
 .curated_slider,.verified_slider {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     margin: 30px 0px;
+    overflow: auto;
+    white-space: nowrap;
+
 }
 .curated_slider div,.verified_slider div {
     scroll-snap-align: start;
@@ -65,41 +71,84 @@ h1 {
 .slider_item {
     display: flex;
     align-items: center;
+    width: 360px;
+    height: 130px;
     margin: 0px 20px;
-    background-color: RGB(245, 238, 194); /* 슬라이더 아이템들 배경 색 */
+    box-sizing: border-box;
+    border-radius: 18px;
+    background: linear-gradient(to right, white, lightgray);
 }
+
 .slider_item img {
-    width: 400px;
-    height: 400px;
+    width: 128px;
+    /* border-radius: 18px; */
 }
-p {
+.slider_item div {
+    width: 232px;
     font-size: 20px;
+    text-align: left;
+    margin-left: 10px;
 }
 
 
 /* 배경 멈춤 컨테이너 */
 .stop_bg_img {
+    width: 100%;
     overflow: visible;
     margin-top: 300px;
-    
+    position: absolute;
 }
 .stop_img {
-    width: 100vh;
+    width: 100%;
     margin-top: 0px;  /* 네비바넣고 수정해야함 */
+    position: relative;
+    left: -240px;
 }
-.collections {
-    display: flex;
-    flex-wrap: wrap;
-}
-.collection img {
-    width: 600px;
-}
+
 .stop_ {
     opacity: 0.5;
     position: fixed;
+    left: 0px;
     z-index: -5;
     top: 0;
 }
 .empty {
     height: 2000px;
+}
+
+
+/* 나머지 컬렉션들 */
+.collections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.collection {
+    margin: 20px;
+
+}
+.collection_img {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.collection_img img{
+    width: 400px;
+    height: 400px;
+}
+
+.info div {
+    margin: 7px 0px;
+}
+.creater {
+    color: rgb(100, 100, 100);
+    font-size: 19px;
+}
+.name {
+    font-weight: bold;
+    font-size: 19px;
+}
+.price {
+    font-size: 19px;
 }

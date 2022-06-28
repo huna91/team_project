@@ -3,26 +3,26 @@
 
 function cu_goPrecious() {
   document.querySelector('.curated_slider').scrollBy({ 
-    left: -300,                 // 숫자 전부 수정해야됨
+    left: -400,                 // 숫자 전부 수정해야됨
     behavior: 'smooth' 
   });
 }
 function cu_goNext() {
   document.querySelector('.curated_slider').scrollBy({ 
-    left: 300,
+    left: 400,
     behavior: 'smooth' 
   });
 }
 
 function ve_goPrecious() {
   document.querySelector('.verified_slider').scrollBy({ 
-    left: -300,
+    left: -400,
     behavior: 'smooth' 
   });
 }
 function ve_goNext() {
   document.querySelector('.verified_slider').scrollBy({ 
-    left: 300,
+    left: 400,
     behavior: 'smooth' 
   });
 }
