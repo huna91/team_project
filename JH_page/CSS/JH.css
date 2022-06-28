@@ -12,11 +12,12 @@ h1 {
 }
 .h4 {
     font-size: 25px;
-    margin: 0px 0px 10px;
+    margin: 70px 0px 10px;
 }
 .h6 {
     color: darkgray;
 }
+
 
 /* < > 버튼 */
 .curated,.verified {
@@ -44,12 +45,13 @@ h1 {
     background-color: rgb(240, 240, 240);
 }
 
+
 /* sliders */
 .curated_slider,.verified_slider {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-
+    margin: 30px 0px;
 }
 .curated_slider div,.verified_slider div {
     scroll-snap-align: start;
@@ -62,4 +64,42 @@ h1 {
 
 .slider_item {
     display: flex;
+    align-items: center;
+    margin: 0px 20px;
+    background-color: RGB(245, 238, 194); /* 슬라이더 아이템들 배경 색 */
+}
+.slider_item img {
+    width: 400px;
+    height: 400px;
+}
+p {
+    font-size: 20px;
+}
+
+
+/* 배경 멈춤 컨테이너 */
+.stop_bg_img {
+    overflow: visible;
+    margin-top: 300px;
+    
+}
+.stop_img {
+    width: 100vh;
+    margin-top: 0px;  /* 네비바넣고 수정해야함 */
+}
+.collections {
+    display: flex;
+    flex-wrap: wrap;
+}
+.collection img {
+    width: 600px;
+}
+.stop_ {
+    opacity: 0.5;
+    position: fixed;
+    z-index: -5;
+    top: 0;
+}
+.empty {
+    height: 2000px;
 }
