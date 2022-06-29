@@ -36,7 +36,9 @@ function ve_goNext() {
 // 스크롤 하면 이미지 고정되고 효과걸리게 //
 
 let stop_bg = document.querySelector(".stop_img");
+let marq = document.querySelector(".marq");
 let _top = stop_bg.getBoundingClientRect().top - window.pageYOffset;
+
 /*
 window.onscroll = function(){
   if (window.scrollY > _top) {
@@ -51,7 +53,7 @@ window.onscroll = function(){
 
 }*/
 
-  /*
+  /* 확인용 콘솔
   console.log("_top = "+ _top)
   console.log("window.pageYOffset = "+ window.pageYOffset);
   console.log("window.scrollY = "+ window.scrollY);
@@ -64,10 +66,12 @@ window.addEventListener("scroll", function(){
   if (window.scrollY > _top) {
     if (!stop_bg.classList.contains("stop_")) {
       stop_bg.classList.add("stop_");
+      marq.classList.add("stop_marq");
     }
   }
   else {
     stop_bg.classList.remove("stop_");
+    marq.classList.remove("stop_marq");
   }
 
 })

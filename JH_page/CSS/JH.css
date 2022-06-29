@@ -93,16 +93,16 @@ h1 {
 
 /* 배경 멈춤 컨테이너 */
 .stop_bg_img {
-    width: 100%;
+    width: 100vw;
     overflow: visible;
     margin-top: 300px;
-    position: absolute;
 }
 .stop_img {
     width: 100%;
-    margin-top: 0px;  /* 네비바넣고 수정해야함 */
-    position: relative;
-    left: -240px;
+    margin-top: 0px;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
 }
 
 .stop_ {
@@ -112,8 +112,55 @@ h1 {
     z-index: -5;
     top: 0;
 }
+
+
+/* marquee gogo */
+@keyframes marquee_1 { 0%{left: 0%;} 100%{left: -50%;} }
+@keyframes marquee_2 { 0%{left: -50%;} 100%{left: 0;} }
+@keyframes marquee_3 { 0%{left: 0;} 100%{left: -50%;} }
+@keyframes marquee_4 { 0%{left: -50%;} 100%{left: 0;} }
+@keyframes marquee_5 { 0%{left: 0;} 100%{left: -50%;} }
+
 .empty {
-    height: 2000px;
+    height: 1500px;
+    z-index: -3;
+}
+.marq { /*화면크기 1000 정도*/
+    font-size: 200px;
+    position: absolute;
+    left: 0px;
+    opacity: 0;
+}
+.marq_in {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.marq_in div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 200%;    /* */
+}
+.marq_in div span {
+    width: 50%;
+    /* color: black; */
+    color: white;
+}
+.txt1 {animation: marquee_1 5s linear infinite}
+.txt2 {animation: marquee_2 10s linear infinite}
+.txt3 {animation: marquee_3 25s linear infinite}
+.txt4 {animation: marquee_4 5s linear infinite}
+.txt5 {animation: marquee_5 10s linear infinite}
+
+.stop_marq {
+    position: fixed;
+    z-index: -1;
+    top: 10px;
+    opacity: 1;
+    transition: 5s;
 }
 
 
