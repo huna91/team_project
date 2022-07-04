@@ -133,7 +133,7 @@ h1 {
 
 
 /* marquee gogo */
-@keyframes marquee_1 { 0%{left: 0%;} 100%{left: -50%;} }
+@keyframes marquee_1 { 0%{left: 0;} 100%{left: -50%;} }
 @keyframes marquee_2 { 0%{left: -50%;} 100%{left: 0;} }
 @keyframes marquee_3 { 0%{left: 0;} 100%{left: -50%;} }
 @keyframes marquee_4 { 0%{left: -50%;} 100%{left: 0;} }
