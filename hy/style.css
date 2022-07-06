@@ -1,0 +1,556 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  background-color: blanchedalmond;
+  /* cursor: none; */
+  overflow: hidden  ;
+}
+.cookie_page{
+  position: fixed;
+  width: 59.701vw;
+  height: 33.922vw;
+  top: 5.428vw;
+  left: 19.675vw;
+  z-index: 8;
+}
+.cookie_page>img{
+  object-fit: contain;
+  width: 59.701vw;
+  
+}
+.hhhhh{
+  display: none;
+  position: fixed;
+  width: 100.407vw;
+  height: 51.628vw;
+  top: 0vw;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+.hhhhh>img{
+  object-fit: contain;
+  width: 100.407vw;
+  
+}
+.page_controll{
+  width: 100.407vw;
+  height: 5.428vw;
+  position: relative;
+}
+.header_home_go{
+  width: 5.428vw;
+  left: 6.784vw;
+  cursor: pointer;
+}
+.header_home_go a{
+  text-decoration: none;
+}
+.header_home_go p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: center;
+  font-size: 0.678vw;
+  font-weight: 700;
+  color: black;
+
+}
+.home_name{
+  width: 13.569vw;
+  font-size: 2.035vw;
+  font-weight: 800;
+}
+.home_name p{
+  display: inline;
+  text-shadow: 0.068vw 0.068vw black;
+}
+.name1{color: #fc2626;}
+.name2{color: #f29634;}
+.name3{color: #eaf510;}
+.name4{color: #53fc05;}
+.name5{color: #3729cb;}
+.name6{color: #f41fcd;}
+.header{
+  position: absolute;
+  width: 100.407vw;
+  height: 5.428vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 221, 171);
+  box-shadow: 0 0.068vw 0.271vw ;
+}
+.header>div{
+  height: 5.428vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header>div>a>img{
+  width: 3.392vw;
+  height: 3.392vw;
+  object-fit: cover;
+}
+#header_out_check{
+  width: 5.428vw;
+}
+#header_home{
+  cursor: pointer;
+}
+#header_menu{
+  top: 4.749vw;
+  position: fixed;
+  width: 100.407vw;
+  height: 23.745vw;
+}
+#header_home>p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: center;
+  font-size: 0.678vw;
+  font-weight: 700;
+}
+.header_menu_wrap{
+  position:relative;
+  display: none;
+  width: 100.407vw;
+  height: 23.745vw;
+}
+.header_menu_wrap ul li{
+  list-style: none;
+}
+.active_menu{
+  display: block;
+  z-index: 99;
+  
+}
+.header_menu_left{
+  /* display: none; */
+  position :absolute;
+  top: 9.498vw;
+  left: 7.056vw;
+  width: 27.137vw;
+  height: 20.353vw;
+  border-radius: 2.713vw;
+  background-color:  rgba(255,168,219,0.9);
+  transition: 1s;
+}
+.header_menu_middle{
+  /* display: none; */
+  position :absolute;
+  left: 35.143vw;
+  top: 5.428vw;
+  width: 27.137vw;
+  height: 20.353vw;
+  border-radius: 2.713vw;
+  background-color:  rgba(188,228,230,0.9);
+  transition: 0.3s;
+}
+.header_menu_right{
+  /* display: none; */
+  position :absolute;
+  left: 63.297vw;
+  top: 7.463vw;
+  width: 27.137vw;
+  height: 20.353vw;
+  border-radius: 2.713vw;
+  background-color:  rgba(209,213,250,0.9);
+  transition: 0.6s;
+}
+.cursor{
+  width: 5.428vw; 
+  height: 5.428vw;
+  top: 10.176vw; 
+  left: 10.176vw;
+  position: absolute;  
+  z-index: 88;
+  pointer-events: none;
+}
+.cursor_img{
+  width: 5.428vw; 
+  height: 5.428vw;
+  top: 1.018vw;
+  left: -1.018vw;
+  position: absolute;
+  background-image: url(images/cursor.gif);
+  background-size: cover;
+}
+.wrapper{
+  perspective: 8.819vw;
+  max-width: 88.195vw;
+  left: 5.428vw;
+  position: absolute;
+}
+#box {
+  z-index: 1;
+    position: relative;
+    height: 100vh;
+    transform: rotateX(-4deg) rotate3d(1, 1, 1, -120deg);
+    transform-style: preserve-3d;
+}
+#box [class ^="pos"] {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 0.3s;
+  border: none;
+}
+#box [class ^="pos"] img{
+  border-radius: 1.357vw;
+  background-color: inherit;
+  width: 6.784vw;
+  border: none                ;
+  height: 6.784vw;
+  transform: rotateY(-90deg) translateZ(3.392vw);
+  position: absolute;
+}
+/* 중좌우중좌우 값 30씩 변경*/
+.pos0{
+  background-color: rgb(240,60,60);
+}
+.pos1{
+  background-color: rgb(240,90,60);
+}
+.pos2{
+  background-color: rgb(240,120,60);
+}
+.pos3{
+  background-color: rgb(240,150,60);
+}
+.pos4{
+  background-color: rgb(240,180,60);
+}
+.pos5{
+  background-color: rgb(240,210,60);
+}
+.pos6{
+  background-color: rgb(240,240,60);
+}
+.pos7{
+  background-color: rgb(210,240,60);
+}
+.pos8{
+  background-color: rgb(180,240,60);
+}
+.pos9{
+  background-color: rgb(150,240,60);
+}
+.pos10{
+  background-color: rgb(120,240,60);
+}
+.pos11{
+  background-color: rgb(90,240,60);
+}
+.pos12{
+  background-color: rgb(60,240,60);
+}
+.pos13{
+  background-color: rgb(60,240,90);
+}
+.pos14{
+  background-color: rgb(60,240,120);
+}
+.pos15{
+  background-color: rgb(60,240,150);
+}
+.pos16{
+  background-color: rgb(60,240,180);
+}
+.pos17{
+  background-color: rgb(60,240,210);
+}
+.pos18{
+  background-color: rgb(60,240,240);
+}
+.pos19{
+  background-color: rgb(60,210,240);
+}
+.pos20{
+  background-color: rgb(60,180,240);
+}
+.pos21{
+  background-color: rgb(60,150,240);
+}
+.pos22{
+  background-color: rgb(60,120,240);
+}
+.pos23{
+  background-color: rgb(60,90,240);
+}
+.pos24{
+  background-color: rgb(60,60,240);
+}
+.pos25{
+  background-color: rgb(90,60,240);
+}
+.pos26{
+  background-color: rgb(120,60,240);
+}
+.pos27{
+  background-color: rgb(150,60,240);
+}
+.pos28{
+  background-color: rgb(180,60,240);
+}
+.pos29{
+  background-color: rgb(210,60,240);
+}
+.pos30{
+  background-color: rgb(240,60,240);
+}
+.pos31{
+  background-color: rgb(240,60,210);
+}
+.pos32{
+  background-color: rgb(240,60,180);
+}
+.pos33{
+  background-color: rgb(240,60,150);
+}
+.pos34{
+  background-color: rgb(240,60,120);
+}
+.pos35{
+  background-color: rgb(240,60,90);
+}
+.wrap_view{
+  z-index: 2;
+  position: fixed;
+  width: 100.407vw;
+  top: 6.784vw;
+  
+}
+.view{
+  width: 100.407vw;
+  height: 23.745vw;
+  /* border: 0.068vw solid red; */
+  top: 2.035vw;
+  margin-top: 2.035vw;
+  display: flex;
+  justify-content:  space-around;
+}
+#view_title{
+  margin-top: 4.071vw;
+  border-bottom: 0.068vw solid gradi;
+}
+#view_content{
+  margin-top: 2.035vw;
+}
+.view_left{
+  margin-left: 6.784vw;
+  display: block;
+  width:45.183vw;
+  height: 23.745vw;
+}
+#nft_buy{
+  height: 23.745vw;
+  width: 23.745vw;
+  margin-left: 2.713vw;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  border-radius: 2.035vw;
+  transition: 1s;
+}
+#view_img{
+  object-fit: contain;
+  position: absolute;
+  height: 23.745vw;
+  width: auto;
+  transition: 1s;
+  /* box-shadow:
+   rgba(240, 46, 170, 0.4) 0.204vw 0.204vw,
+   rgba(240, 46, 170, 0.3) 0.407vw 0.407vw,
+   rgba(240, 46, 170, 0.2) 0.611vw 0.611vw,
+   rgba(240, 46, 170, 0.1) 0.814vw 0.814vw; */
+}
+.price{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.678vw;
+}
+#price_logo{
+  height: 1.357vw;
+  width: auto;
+  display: inline;
+  object-fit: contain;
+}
+#view_price{
+  display: inline;
+  margin-left: 0.339vw;
+}
+.view_right{
+  display: inline-block;
+  width: 36.16vw;
+  height: 23.745vw;
+  /* border: 0.068vw solid green; */
+}
+.buy_button{
+  cursor: pointer;
+  width: 18.996vw;
+  height: 2.713vw;
+  margin-top: 2.713vw;
+  border-radius: 0.543vw;
+  border: none;
+  color: #53fc05;
+  font-size: 1.154vw;
+  font-weight: 600;
+  background-color: #3729cb;
+  box-shadow: 0 0 0.678vw 0.136vw ;
+  display: none;
+}
+.ball{
+  width: 10.176vw;
+  height: 10.176vw;
+  border-radius: 5.088vw;
+  /* background-color: red; */
+  z-index: 0;
+  position: fixed;
+  top: 47.49vw;
+  left: 44.776vw;
+  transition: 1s;
+  background: radial-gradient(
+   #ee5252 , 
+   #e79d3c , 
+   #eaf510 ,
+   #53fc05 ,
+   #05fcc2 ,
+   #2343f8 ,
+   #f41ff4 ,
+   #fc2626 );
+  background-size: 600% 200%; 
+  animation: gradient 3s infinite;
+  box-shadow: 0 0 1.357vw black;
+}
+@keyframes gradient { 
+  0% { background-position: 0% 50%; } 
+  50% { background-position: 100% 50%; } 
+  100% { background-position: 0% 50%; }
+}
+.buy_page_hidden{
+  display: none;
+}
+.buy_page{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100.407vw;
+  height: 51.628vw;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buy_page_active{
+  display: block;
+}
+.buy_page_wrap{
+  display: inline-block;
+  width: 33.922vw;
+  height: 17.639vw;
+  background-color: rgb(59, 64, 56);
+  border-radius: 1.696vw;
+}
+.buy_page_title{
+  display: flex;
+  justify-content: center;
+  height: 3.392vw;
+}
+.buy_page_title>h1{
+  margin: 0;
+  color: white;
+}
+.buy_page_price{
+  margin-top: 1.357vw;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+}
+.buy_page_price_name>h2{
+  margin: 0;
+  display: inline;
+}
+.buy_page_price_logo{
+  display: flex;
+  align-items: center;
+}
+.buy_page_price_logo>img{
+  width: 1.357vw;
+  height: 1.357vw;
+  margin-right: 0.678vw;
+  object-fit: contain;
+}
+.buy_page_price_value{
+  font-size: 1.357vw;
+}
+.buy_page_btn{
+  display: flex;
+  margin-top: 2.035vw;
+  justify-content: center;
+}
+.buy_page_btn>button{
+  width: 27.137vw;
+  height: 2.578vw;
+  border-radius: 0.678vw;
+  color: white;
+  background-color: inherit;
+  font-size: 1.357vw;
+  border-color: #e79d3c;
+}
+.buy_page_close_btn{
+  display: flex;
+  width: 33.243vw;
+  height: 3.528vw;
+  flex-direction: row-reverse;
+  padding-right: 1.018vw;
+  align-items: center;
+}
+.buy_page_close_btn>button{
+  cursor: pointer;
+  width: 1.696vw;
+  height: 1.696vw;
+  background-image: url(images/x-sign.png);
+  background-size: contain;
+  border: none;
+  background-color: inherit;
+}
+.menu_bar{
+  position: absolute;
+  z-index: 10;
+  top: 33.922vw;
+  left: 93.623vw;
+  width: 3.392vw;
+  height: 13.569vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.882vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.menu_bar>div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.392vw;
+  width: 3.392vw;
+  transition: 1s;
+}
+.bbox:hover{
+  transform: scale(1.2) rotate(360deg);
+  transition: 1s;
+  cursor: pointer;
+  
+}
+.menu_bar img{
+  object-fit: contain;
+  width: 2.035vw;
+  height: 2.035vw;
+}
+.menu_bar>div>a{
+  height: 2.035vw;
+  width: 2.035vw;
+}
+
+
+

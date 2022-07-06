@@ -1,0 +1,219 @@
+
+#main {
+    width: 100vh;
+    margin: auto;
+    z-index: 0;
+}
+
+#webgl-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -200;
+}
+.boxbox {
+    width: 100%;
+    height: 500px;
+    background-color: transparent;
+}
+
+
+/* h 들 */
+h1 {
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 20px 0px 20px;
+}
+.h4 {
+    color: white;
+    font-size: 25px;
+    margin: 70px 0px 10px;
+}
+.h6 {
+    color: darkgray;
+}
+
+
+/* < > 버튼 */
+.curated,.verified {
+    position: relative;
+}
+.curated span img,.verified span img{
+    border: 1px solid darkgray;
+    padding: 5px;
+    border-radius: 25px;
+    /* margin-top: -10px; */
+    transition: 0.5s;
+}
+.curated span:last-child img,
+.verified span:last-child img {
+    position: absolute;
+    right: 1px;
+}
+.curated span:nth-child(3) img,
+.verified span:nth-child(3) img {
+    position: absolute;
+    right: 45px;
+}
+.curated span img:hover,.verified span img:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+
+/* sliders */
+.curated_slider-container {
+    height: 131px;
+}
+.curated_slider,.verified_slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin: 30px 0px;
+    overflow: auto;
+    white-space: nowrap;
+
+}
+.curated_slider div,.verified_slider div {
+    scroll-snap-align: start;
+}
+
+.curated_slider::-webkit-scrollbar,
+.verified_slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider_item {
+    display: flex;
+    align-items: center;
+    width: 360px;
+    height: 130px;
+    margin: 0px 20px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    background: linear-gradient(to right, white, lightgray);
+}
+
+.slider_item img {
+    width: 128px;
+    /* border-radius: 18px; */
+}
+.slider_item div {
+    width: 232px;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+/* 배경 멈춤 컨테이너 */
+.stop_bg_img {
+    width: 100vw;
+    overflow: visible;
+    margin-top: 300px;
+}
+.stop_img {
+    width: 100%;
+    margin-top: 0px;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+}
+
+.stop_ {
+    opacity: 0.5;
+    position: fixed;
+    left: 0px;
+    z-index: -3;
+    top: 0;
+}
+
+
+/* marquee gogo */
+@keyframes marquee_1 { 0%{left: 0;} 100%{left: -50%;} }
+@keyframes marquee_2 { 0%{left: -50%;} 100%{left: 0;} }
+@keyframes marquee_3 { 0%{left: 0;} 100%{left: -50%;} }
+@keyframes marquee_4 { 0%{left: -50%;} 100%{left: 0;} }
+@keyframes marquee_5 { 0%{left: 0;} 100%{left: -50%;} }
+
+.empty {
+    height: 1500px;
+    z-index: -2;
+}
+.marq { /*화면크기 1000 정도*/
+    font-size: 200px;
+    position: absolute;
+    left: 0px;
+    opacity: 0;
+}
+.marq_in {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+.marq_in div {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 200%;    /* */
+}
+.marq_in div span {
+    width: 50%;
+    /* color: black; */
+    color: white;
+}
+.txt1 {animation: marquee_1 5s linear infinite}
+.txt2 {animation: marquee_2 10s linear infinite}
+.txt3 {animation: marquee_3 25s linear infinite}
+.txt4 {animation: marquee_4 5s linear infinite}
+.txt5 {animation: marquee_5 10s linear infinite}
+
+.stop_marq {
+    position: fixed;
+    z-index: -1;
+    top: 10px;
+    opacity: 1;
+    transition: 5s;
+}
+
+
+/* 나머지 컬렉션들 */
+.collections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.collection {
+    margin: 20px;
+
+}
+.collection_img {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.collection_img img{
+    width: 400px;
+    height: 400px;
+}
+
+.info div {
+    margin: 7px 0px;
+}
+.creater {
+    color: rgb(100, 100, 100);
+    font-size: 19px;
+}
+.name {
+    font-weight: bold;
+    font-size: 19px;
+}
+.price {
+    font-size: 19px;
+}

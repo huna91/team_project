@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="CSS/reset.css">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="CSS/JH.css">
+<script type="module" src="JS/box.js" defer></script>
+<body>
+    <div id="webgl-container"><!--빙글빙글큐브--></div>
+    <div id="main">
+        
+        <h1>Marketplace</h1> <!-- 검색 인풋 넣을까? -->
+        
+        <!-- 최근 선별된 컬렉션 -->
+        <div class="curated">
+            <div class="h4">Recent Curated Collections</div>
+            <span class="h6">Hand selected and exclusively dropped on Cookie Cloud</span>
+            <span type="button" onClick="cu_goPrecious()">
+                <img src="img/left.png" alt="left">
+            </span>
+            <span type="button" onClick="cu_goNext()">
+                <img src="img/right.png" alt="right">
+            </span>
+        </div>
+        <div class="curated_slide-container">
+            <div class="curated_slider">
+                <div class="slider_item">
+                    <img src="img/recent1.png" alt="curated1">
+                    <div>the endless battle<br>by yosnier</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent2.jpeg" alt="curated2">
+                    <div>Positive Disintegration<br>by Tania Franco Klein</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent3.jpeg" alt="curated3">
+                    <div>Andy Warhol Eyes Wide<br>Closed Open Edition by<br>Paige Powell</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent4.jpeg" alt="curated4">
+                    <div>Andy Warhol Eyes Wide<br>closed by Paige Powell</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent5.jpeg" alt="curated5">
+                    <div>Spirit Twins Open Edition<br>by Ismail Zaidy</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent6.jpeg" alt="curated6">
+                    <div>Seek YourOwn Vision by<br>Ismail Zaidy</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent7.jpeg" alt="curated7" height="128px">
+                    <div>Photographing Other<br>Worlds Open Edition</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent8.jpeg" alt="curated8">
+                    <div>Photographing Other<br>Worlds</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent9.jpeg" alt="curated9" height="128px">
+                    <div>NFT NYC Auctions by<br>Brendan Murphy</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/recent10.jpeg" alt="curated10">
+                    <div>Aku.001 - The Vault<br>Consognment Auction</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 최근 확인된 컬렉션 -->
+        <div class="verified">
+            <div class="h4">Recent Verified Collections</div>
+            <span class="h6">External listings that have been verified as legitimate and authentic by Cookie Cloud</span>
+            <span type="button" onClick="ve_goPrecious()">
+                <img src="img/left.png" alt="left">
+            </span>
+            <span type="button" onClick="ve_goNext()">
+                <img src="img/right.png" alt="right">
+            </span>
+        </div>
+        <div class="verified_slide-container">
+            <div class="verified_slider">
+                <div class="slider_item">
+                    <img src="img/verified1.jpeg" alt="verified1">
+                    <div>PUNKS Comic 2</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified2.png" alt="verified2">
+                    <div>WEB 4 DED DFFICIAL</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified3.jpeg" alt="verified3">
+                    <div>furu Surprise</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified4.webp" alt="verified4">
+                    <div>YOU THE REAL MVP</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified5.webp" alt="verified5">
+                    <div>AreYouSeeingThis</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified6.jpeg" alt="verified6">
+                    <div>Significant Others</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified7.jpeg" alt="verified7">
+                    <div>Digi Sharks</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified8.webp" alt="verified8">
+                    <div>WeAre by John Johnny</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified9.png" alt="verified9">
+                    <div>It's nothing</div>
+                </div>
+                <div class="slider_item">
+                    <img src="img/verified10.jpg" alt="verified10">
+                    <div>apedog.wtf</div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- 투명디브에 백그라운드박스 -->
+        <div class="boxbox"></div>
+
+
+        <!-- 컬렉션들... 검색기능 안넣고 싶다 -->
+        <div id="stop_bg_container">
+            <div class="stop_bg_img">
+                <img src="img/chan_sleeping.jpg" alt="sleep" class="stop_img">
+            </div>
+
+            <!-- 빈칸 이었는데, marquee 넣음 -->
+            <div class="empty">
+                <div class="marq">
+                    <div class="marq_in">
+                        <div class="txt1">
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                        </div>
+                        <div class="txt2">
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                        </div>
+                        <div class="txt3">
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                        </div>
+                        <div class="txt4">
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                        </div>
+                        <div class="txt5">
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                            <span>Cookie Cloud</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collections">
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent1.png" alt="recent1">
+                    </div>
+                    <div class="info">
+                        <div class="creater">yosnier</div>
+                        <div class="name">the endless</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent2.jpeg" alt="recent2">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Tania Franco Klein</div>
+                        <div class="name">Grid Mirror (Self-Portrait)</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent3.jpeg" alt="recent3">
+                    </div>
+                    <div>
+                        <div class="creater">Paige Powell</div>
+                        <div class="name">Andy Warhol Eyes Wide Closed</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent4.jpeg" alt="recent4">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Paige Powell</div>
+                        <div class="name">Andy Warhol Eyes Wide Closed #1</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent5.jpeg" alt="recent5">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Ismail Zaidy</div>
+                        <div class="name">Spirit Twins</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent6.jpeg" alt="recent6">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Ismail Zaidy</div>
+                        <div class="name">Seek Your Own Vision</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent7.jpeg" alt="recent7">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Photographing Other Worlds</div>
+                        <div class="name">Colors Your Eyes by Jeff Frost</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent8.jpeg" alt="recent8">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Photographing Other Worlds</div>
+                        <div class="name">Blue Dragons by Johan Lolos</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent9.jpeg" alt="recent9">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Boonji Project</div>
+                        <div class="name">33 Instincts</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/recent10.jpeg" alt="recent10">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Micah</div>
+                        <div class="name">Aku.001 - The Vault Consignment Auction</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified1.jpeg" alt="verified1">
+                    </div>
+                    <div class="info">
+                        <div class="creater">PUNKS Comic</div>
+                        <div class="name">PUNKS Comic</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified2.png" alt="verified2">
+                    </div>
+                    <div class="info">
+                        <div class="creater">WEB 4 DED OFFICIAL</div>
+                        <div class="name">EWB 4 DED OFFICIAL</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified3.jpeg" alt="verified3">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Furu Surprise</div>
+                        <div class="name">Furu Surprise</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified4.webp" alt="verified4">
+                    </div>
+                    <div class="info">
+                        <div class="creater">YOU THE REAL MVP Official</div>
+                        <div class="name">YOU THE REAL MVP</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified5.webp" alt="verified5">
+                    </div>
+                    <div class="info">
+                        <div class="creater">AreYouSeeingThis Official</div>
+                        <div class="name">AreYouSeeingThis</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified6.jpeg" alt="verified6">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Significant Others</div>
+                        <div class="name">Significant Others</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified7.jpeg" alt="verified7">
+                    </div>
+                    <div class="info">
+                        <div class="creater">Digi Sharks</div>
+                        <div class="name">Digi Sharks</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified8.webp" alt="verified8">
+                    </div>
+                    <div class="info">
+                        <div class="creater">WeAre by Johnny</div>
+                        <div class="name">weAre by Johnny</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified9.png" alt="verified9">
+                    </div>
+                    <div class="info">
+                        <div class="creater">It's nothing</div>
+                        <div class="name">It's nothing</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <div class="collection_img">
+                        <img src="img/verified10.jpg" alt="verified10">
+                    </div>
+                    <div class="info">
+                        <div class="creater">apedog.wtf official</div>
+                        <div class="name">apedog.wtf</div>
+                        <div class="price">price</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="JS/JH.js"></script>
+</html>
