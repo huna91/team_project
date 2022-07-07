@@ -3,7 +3,7 @@
 
 function cu_goPrecious() {
   document.querySelector('.curated_slider').scrollBy({ 
-    left: -400,                 // 숫자 전부 수정해야됨
+    left: -400,
     behavior: 'smooth' 
   });
 }
@@ -75,3 +75,83 @@ window.addEventListener("scroll", function(){
   }
 
 })
+
+
+
+//메뉴판
+
+class StickyNavigation {
+	
+	constructor() {
+		this.currentId = null;
+		this.currentTab = null;
+		this.ContainH = 70;
+		let self = this;
+		$('.menu-tab').click(function() { 
+			self.onTabClick(event, $(this)); 
+		});
+		$(window).scroll(() => { this.onScroll(); });
+		$(window).resize(() => { this.onResize(); });
+	}
+	
+	onTabClick(event, element) {
+		event.preventDefault();
+		let scrollTop = $(element.attr('href')).offset().top - this.ContainH + 1;
+		$('html, body').animate({ scrollTop: scrollTop }, 600);
+	}
+	
+	onScroll() {
+		this.checkP();
+    this.findCurrentTabSelector();
+	}
+	
+	onResize() {
+		if(this.currentId) {
+			this.setSliderCss();
+		}
+	}
+	
+	checkP() {
+		let offset = $('.menu-tabs').offset().top + $('.menu-tabs').height() - this.ContainH;
+		if($(window).scrollTop() > offset) {
+			$('.menu-tabs-container').addClass('menu-tabs-container--top');
+		} 
+		else {
+			$('.menu-tabs-container').removeClass('menu-tabs-container--top');
+		}
+	}
+	
+	findCurrentTabSelector() {
+		let newCurrentId;
+		let newCurrentTab;
+		let self = this;
+		$('.menu-tab').each(function() {
+			let id = $(this).attr('href');
+			let offsetTop = $(id).offset().top - self.ContainH;
+			let offsetBottom = $(id).offset().top + $(id).height() - self.ContainH;
+			if($(window).scrollTop() > offsetTop && $(window).scrollTop() < offsetBottom) {
+				newCurrentId = id;
+				newCurrentTab = $(this);
+			}
+		});
+		if(this.currentId != newCurrentId || this.currentId === null) {
+			this.currentId = newCurrentId;
+			this.currentTab = newCurrentTab;
+			this.setSliderCss();
+		}
+	}
+	
+	setSliderCss() {
+		let width = 0;
+		let left = 0;
+		if(this.currentTab) {
+			width = this.currentTab.css('width');
+			left = this.currentTab.offset().left;
+		}
+		$('.menu-tab-slider').css('width', width);
+		$('.menu-tab-slider').css('left', left);
+	}
+	
+}
+
+new StickyNavigation();

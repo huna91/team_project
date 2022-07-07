@@ -3,6 +3,7 @@
     width: 100vh;
     margin: auto;
     z-index: 0;
+    margin-top: 130px;
 }
 
 #webgl-container {
@@ -17,6 +18,62 @@
     width: 100%;
     height: 500px;
     background-color: transparent;
+}
+
+
+/* 네비바!! */
+.menu-tabs-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 20px black;
+    background: #d2dae2;
+    z-index: 10;
+}
+.menu-tab {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    flex: 1;
+    color: black;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 0.8rem; 
+    text-decoration: none;
+}
+.menu-tab:hover {
+    color: white;
+    background: rgba(113, 181, 240);
+    transition: all 0.5s ease;
+}
+
+.menu-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background: rgb(138, 138, 207);
+    transition: left 0.3s ease;
+}
+@media (min-width: 800px) {
+    .menu-tabs h1,
+    .menu-slide h1 {
+        font-size: 3rem;
+    }
+    .menu-tabs h3,
+    .menu-slide h3 {
+        font-size: 1rem;
+    }
+
+    .menu-tab {
+        font-size: 1rem;
+    }
+}
+.menu-tab:nth-child(2) {
+    background: rgba(113, 181, 240);
 }
 
 

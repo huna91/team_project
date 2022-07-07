@@ -48,12 +48,13 @@ class App {
         
         const textureLoader = new THREE.TextureLoader();
         const map = textureLoader.load(
-            "../uv_grid_opengl.jpg",
+            "CookieCloud_yellow.png",
             texture => {}
         );
 
         const material = new THREE.MeshStandardMaterial({
-            color: "#fff4b1"
+            color: "#fff4b1",
+            map: map,
         });
 
 
